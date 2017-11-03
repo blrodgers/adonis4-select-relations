@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Select With Relations</title>
+  {{ css('style') }}
+</head>
+<body>
+  <section>
+
+    <div class="title">Results of .select() with relations:</div>
+    <div class="line">See PostController.js for actual queries</div>
+
+    <div class="line"> With no .select() call:</div>
+    <div class="json"> {{{toJSON(noselect)}}}</div>
+
+    <div class="line">.select('title', 'body') before .with('tags')</div>
+    <div class="json"> {{{toJSON(beforeselect)}}}</div>
+
+    <div class="line">.select('title', 'body') after .with('tags')</div>
+    <div class="json"> {{{toJSON(afterselect)}}}</div>
+
+    <div class="line">.select('posts.title', 'posts.body') after .with('tags')</div>
+    <div class="json"> {{{toJSON(dotselect)}}}</div>
+
+    <div class="line">.select('posts.title', 'posts.body', 'tags') after .with('tags')</div>
+    <div class="json"> {{{toJSON(dotselectwithtags)}}}</div>
+
+    <div class="line">.select('name') nested in 'tags' subquery, with .select() on Post</div>
+    <div class="json"> {{{toJSON(subqueryselect)}}}</div>
+
+    <div class="line"> no .select() on Post, but .select('name') nested in 'tags' subquery</div>
+    <div class="json"> {{{toJSON(subquerywithoutselect)}}}</div>
+  </section>
+</body>
+</html>

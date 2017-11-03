@@ -16,3 +16,5 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+Route.get('init', 'InitController.go')
+Route.get('posts', 'PostController.go')
