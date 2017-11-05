@@ -15,7 +15,7 @@ class PostController {
 
     const beforeselect = await Post
       .query()
-      .select('title', 'body')
+      .select('id', 'title', 'body')
       .with('tags')
       .limit(limit)
       .fetch()
@@ -23,14 +23,14 @@ class PostController {
     const afterselect = await Post
       .query()
       .with('tags')
-      .select('title', 'body')
+      .select('id', 'title', 'body')
       .limit(limit)
       .fetch()
 
     const dotselect = await Post
       .query()
       .with('tags')
-      .select('posts.title', 'posts.body')
+      .select('posts.id', 'posts.title', 'posts.body')
       .limit(limit)
       .fetch()
 
@@ -48,7 +48,7 @@ class PostController {
       .with('tags', (builder) => {
         builder.select('name')
       })
-      .select('title', 'body')
+      .select('id', 'title', 'body')
       .limit(limit)
       .fetch()
 

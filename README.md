@@ -1,4 +1,7 @@
 # adonis4-select-relations
+
+CLOSED! The issue this repo was created to demonstrate was due to my personal error. I neglected to add the 'id' column to my .select() call. This repo will remain as permanent tribute to my ability to overlook the obvious.
+
 Project to reproduce select() statement behavior with relations as seen at:
 
 https://forum.adonisjs.com/t/select-statements-with-relations/296
